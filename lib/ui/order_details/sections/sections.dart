@@ -42,7 +42,14 @@ Widget bidOrderSection() {
           leading: MaterialButton(
             color: Colors.green,
             onPressed: () {},
-            child: Text("PLACE BID"),
+            child: Text(
+              "PLACE BID",
+              style: TextStyle(
+                color: textColor,
+                fontWeight: FontWeight.w200,
+                fontSize: 14,
+              ),
+            ),
           ),
           trailing: MaterialButton(
               onPressed: () {},
@@ -64,6 +71,5 @@ Widget bidOrderSection() {
 Card orderReportCard() {
   return Card(
     color: mySecondaryColor,
-    
   );
 }

@@ -1,15 +1,34 @@
-import 'package:essayguru/constants/const.dart';
-import 'package:essayguru/ui/order_details/main.dart';
 import 'package:flutter/material.dart';
+import 'package:essayguru/constants/const.dart';
 
-class AvailableOrderPage extends StatelessWidget {
-  AvailableOrderPage({Key? key}) : super(key: key);
+class AvailableOrderPage extends StatefulWidget {
+  const AvailableOrderPage({Key? key}) : super(key: key);
+
+  @override
+  State<AvailableOrderPage> createState() => _AvailableOrderPageState();
+}
+
+class _AvailableOrderPageState extends State<AvailableOrderPage> with SingleTickerProviderStateMixin {
+  late TabController _controller;
+  // ignore: unused_field
+  int _selectedindex = 0;
   List<Tab> myTabs = <Tab>[
     Tab(text: "all".toUpperCase()),
     Tab(text: "invited".toUpperCase()),
     Tab(text: "HIDDEN".toUpperCase()),
   ];
-  // controller object
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TabController(length: myTabs.length, vsync: this);
+    _controller.addListener(() {
+      setState(() {
+        _selectedindex = _controller.index;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,62 +48,44 @@ class AvailableOrderPage extends StatelessWidget {
           ),
         ),
       ),
-      body: DefaultTabController(
-        length: myTabs.length,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Scaffold(
+          backgroundColor: myPrimaryColor,
+          appBar: AppBar(
             backgroundColor: myPrimaryColor,
-            appBar: AppBar(
-              backgroundColor: myPrimaryColor,
-              elevation: 0,
-              flexibleSpace: TabBar(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                labelColor: Color.fromARGB(255, 235, 235, 235),
-                tabs: myTabs,
+            elevation: 0,
+            flexibleSpace: TabBar(
+              controller: _controller,
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              labelColor: const Color.fromARGB(255, 235, 235, 235),
+              tabs: myTabs,
+            ),
+          ),
+          body: TabBarView(
+            controller: _controller,
+            children: [
+              ListView(
+                children: [
+                  orderTileCard(),
+                  orderTileCard(),
+                  orderTileCard(),
+                  orderTileCard(),
+                  orderTileCard(),
+                ],
               ),
-            ),
-            body: TabBarView(
-              children: [
-                ListView(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => const MainOrderDetailsPage()),
-                        );
-                      },
-                      child: orderTileCard(),
-                    ),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                    orderTileCard(),
-                  ],
-                ),
-                ListView(
-                  children: [
-                    orderTileCard(),
-                  ],
-                ),
-                ListView(
-                  children: [
-                    orderTileCard(),
-                    orderTileCard(),
-                  ],
-                ),
-              ],
-            ),
+              ListView(
+                children: [
+                  orderTileCard(),
+                ],
+              ),
+              ListView(
+                children: [
+                  orderTileCard(),
+                  orderTileCard(),
+                ],
+              ),
+            ],
           ),
         ),
       ),

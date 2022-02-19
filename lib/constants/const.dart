@@ -1,12 +1,11 @@
-import 'package:essayguru/ui/order_details/main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Color myPrimaryColor = Color.fromARGB(255, 1, 13, 39);
-Color mySecondaryColor = Color.fromARGB(206, 26, 41, 70);
-Color textColor = Color.fromARGB(255, 240, 240, 240);
-Color greytextColor = Color.fromARGB(255, 94, 94, 94);
-Color inactiveLinkTextColor = Color.fromARGB(255, 192, 192, 192);
+Color myPrimaryColor = const Color.fromARGB(255, 1, 13, 39);
+Color mySecondaryColor = const Color.fromARGB(206, 26, 41, 70);
+Color textColor = const Color.fromARGB(255, 240, 240, 240);
+Color greytextColor = const Color.fromARGB(255, 94, 94, 94);
+Color inactiveLinkTextColor = const Color.fromARGB(255, 192, 192, 192);
 
 Widget desktopsidebarButton(
     BuildContext context, String text, IconData awesomeIcons, String indicatorText, bool isNotification) {
@@ -29,8 +28,8 @@ Widget desktopsidebarButton(
               fontWeight: FontWeight.w300,
             ),
           ),
-          Expanded(child: SizedBox()),
-          !indicatorText.isEmpty
+          const Expanded(child: SizedBox()),
+          indicatorText.isNotEmpty
               ? Text(
                   indicatorText,
                   style: TextStyle(
@@ -41,23 +40,23 @@ Widget desktopsidebarButton(
                 )
               : isNotification
                   ? Container(
-                      padding: EdgeInsets.all(4),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.all(4),
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Color.fromARGB(255, 76, 0, 255),
                       ),
-                      child: Text(
+                      child: const Text(
                         "",
                         style: TextStyle(fontSize: 7),
                       ),
                     )
                   : Container(
-                      padding: EdgeInsets.all(4),
+                      padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: mySecondaryColor.withOpacity(0),
                       ),
-                      child: Text(
+                      child: const Text(
                         "",
                         style: TextStyle(fontSize: 7),
                       ),
@@ -98,11 +97,11 @@ Widget orderTileCard() {
               ),
             ),
           ),
-          Expanded(child: Text("")),
+          const Expanded(child: Text("")),
           Padding(
             padding: const EdgeInsets.only(bottom: 4.0),
             child: Text(
-              "\$12",
+              "\$12.00",
               style: TextStyle(
                 color: textColor,
                 fontWeight: FontWeight.w400,
@@ -122,7 +121,7 @@ Widget orderTileCard() {
               fontSize: 10,
             ),
           ),
-          SizedBox(width: 7),
+          const SizedBox(width: 7),
           Text(
             "1 pages",
             style: TextStyle(
@@ -131,7 +130,7 @@ Widget orderTileCard() {
               fontSize: 10,
             ),
           ),
-          SizedBox(width: 7),
+          const SizedBox(width: 7),
           Text(
             "Research paper",
             style: TextStyle(
@@ -140,7 +139,7 @@ Widget orderTileCard() {
               fontSize: 10,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Text(""),
           ),
           Text(
@@ -153,7 +152,7 @@ Widget orderTileCard() {
           ),
         ],
       ),
-      trailing: Icon(
+      trailing:  Icon(
         FontAwesomeIcons.ellipsisV,
         color: textColor,
         size: 15,
@@ -166,29 +165,29 @@ Widget chatTileCard() {
   return Column(
     children: [
       ListTile(
-          contentPadding: EdgeInsets.all(7),
+          contentPadding: const EdgeInsets.all(7),
           // minVerticalPadding: 7,
           title: Row(
             children: [
-              Text(
+              const Text(
                 "788917 Discussion",
                 style: TextStyle(fontSize: 13),
               ),
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
               Text(
                 "14 hours ago",
                 style: TextStyle(fontSize: 13, color: greytextColor),
               ),
             ],
           ),
-          subtitle: Padding(
-            padding: const EdgeInsets.all(8.0),
+          subtitle: const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "You: lorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor",
               style: TextStyle(fontSize: 13),
             ),
           ),
-          trailing: Icon(
+          trailing: const Icon(
             FontAwesomeIcons.chevronRight,
           )),
       Divider(color: myPrimaryColor.withOpacity(0.2)),

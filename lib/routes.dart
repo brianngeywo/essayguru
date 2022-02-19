@@ -1,5 +1,5 @@
 class Routes {
   static const String home = "/";
-  static const String post = "post";
-  static const String style = "style"; 
+  static const String mainOrderDetailsPage = "details";
+  static const String availableOrder = "available_orders";
 }

@@ -2,7 +2,6 @@ import 'package:essayguru/constants/const.dart';
 import 'package:essayguru/ui/homepage/sections/available_orders_section.dart';
 import 'package:essayguru/sections/sidebars.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 class HomePage extends StatelessWidget {
   final String title;
@@ -23,7 +22,7 @@ class HomePage extends StatelessWidget {
           Expanded(
             child: Container(
               color: myPrimaryColor,
-              child: AvailableOrderPage(),
+              child: const AvailableOrderPage(),
               padding: const EdgeInsets.all(15),
             ),
           ),

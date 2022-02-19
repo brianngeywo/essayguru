@@ -25,7 +25,7 @@ Widget sidebar(BuildContext context) {
             children: [
               ResponsiveWrapper.of(context).isDesktop
                   ? Container(
-                      padding: EdgeInsets.all(10),
+                      padding:const EdgeInsets.all(10),
                       width: double.infinity,
                       color: myPrimaryColor,
                       child: Text(
@@ -40,7 +40,7 @@ Widget sidebar(BuildContext context) {
                     )
                   : ResponsiveWrapper.of(context).isTablet
                       ? Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           width: double.infinity,
                           color: ResponsiveWrapper.of(context).isTablet ? mySecondaryColor : myPrimaryColor,
                           child: Text(
@@ -53,13 +53,13 @@ Widget sidebar(BuildContext context) {
                             ),
                           ),
                         )
-                      : SizedBox(),
+                      : const SizedBox(),
               ResponsiveWrapper.of(context).isTablet
                   ? Divider(
                       color: myPrimaryColor,
                     )
                   : Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       width: double.infinity,
                       color: myPrimaryColor,
                       child: ListTile(
@@ -172,7 +172,7 @@ Widget chatSidebar(BuildContext context) {
             // mainAxisAlignment: MainAxisAlignment.start,
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ListTile(
+             const ListTile(
                 leading: Text(
                   "Chats",
                   style: TextStyle(fontSize: 18),
