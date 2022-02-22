@@ -1,3 +1,4 @@
+import 'package:essayguru/widgets/main.dart';
 import 'package:flutter/material.dart';
 import 'package:essayguru/constants/const.dart';
 
@@ -49,7 +50,7 @@ class _AvailableOrderPageState extends State<AvailableOrderPage> with SingleTick
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(4.0),
         child: Scaffold(
           backgroundColor: myPrimaryColor,
           appBar: AppBar(
@@ -67,22 +68,18 @@ class _AvailableOrderPageState extends State<AvailableOrderPage> with SingleTick
             children: [
               ListView(
                 children: [
-                  orderTileCard(),
-                  orderTileCard(),
-                  orderTileCard(),
-                  orderTileCard(),
-                  orderTileCard(),
+                  orderTileCard(context),
+                  orderTileCard(context),
                 ],
               ),
               ListView(
                 children: [
-                  orderTileCard(),
+                  orderTileCard(context),
                 ],
               ),
               ListView(
                 children: [
-                  orderTileCard(),
-                  orderTileCard(),
+                  orderTileCard(context),
                 ],
               ),
             ],

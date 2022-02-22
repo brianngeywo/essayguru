@@ -1,4 +1,5 @@
 import 'package:essayguru/constants/const.dart';
+import 'package:essayguru/widgets/main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -19,13 +20,12 @@ Widget sidebar(BuildContext context) {
       : Container(
           color: mySecondaryColor,
           width: ResponsiveWrapper.of(context).isTablet ? 50 : 230,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               ResponsiveWrapper.of(context).isDesktop
                   ? Container(
-                      padding:const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       width: double.infinity,
                       color: myPrimaryColor,
                       child: Text(
@@ -55,9 +55,7 @@ Widget sidebar(BuildContext context) {
                         )
                       : const SizedBox(),
               ResponsiveWrapper.of(context).isTablet
-                  ? Divider(
-                      color: myPrimaryColor,
-                    )
+                  ? Divider(color: myPrimaryColor)
                   : Container(
                       padding: const EdgeInsets.all(10),
                       width: double.infinity,
@@ -156,59 +154,50 @@ Widget sidebar(BuildContext context) {
 }
 
 Widget chatSidebar(BuildContext context) {
-  return ResponsiveWrapper.of(context).isSmallerThan(TABLET)
-      ? IconButton(
-          onPressed: () {},
-          icon: Icon(
-            FontAwesomeIcons.facebookMessenger,
+  return Container(
+    color: textColor,
+    width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 0 : 320,
+    child: ListView(
+      // mainAxisAlignment: MainAxisAlignment.start,
+      // crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const ListTile(
+          leading: Text(
+            "Chats",
+            style: TextStyle(fontSize: 18),
+          ),
+          trailing: Icon(
+            Icons.close,
             size: 20,
-            color: myPrimaryColor,
           ),
-        )
-      : Container(
-          color: textColor,
-          width: ResponsiveWrapper.of(context).isTablet ? 0 : 320,
-          child: ListView(
-            // mainAxisAlignment: MainAxisAlignment.start,
-            // crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-             const ListTile(
-                leading: Text(
-                  "Chats",
-                  style: TextStyle(fontSize: 18),
-                ),
-                trailing: Icon(
-                  Icons.close,
-                  size: 20,
-                ),
-              ),
-              Divider(color: myPrimaryColor.withOpacity(0.5)),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              chatTileCard(),
-              // ResponsiveRowColumn(
-              //   // rowMainAxisAlignment: MainAxisAlignment.start,
-              //   // rowCrossAxisAlignment: CrossAxisAlignment.start,
-              //   // columnMainAxisAlignment: MainAxisAlignment.start,
-              //   // columnCrossAxisAlignment: CrossAxisAlignment.start,
-              //   layout: ResponsiveRowColumnType.COLUMN,
-              //   children: [
-              //     ResponsiveRowColumnItem(
-              //       child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-              //           ? mobilesidebarButton(FontAwesomeIcons.comment)
-              //           : desktopsidebarButton(context, "chats", FontAwesomeIcons.bars),
-              //     ),
-              //   ],
-              // ),
-            ],
-          ),
-        );
+        ),
+        Divider(color: myPrimaryColor.withOpacity(0.5)),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        chatTileCard(),
+        // ResponsiveRowColumn(
+        //   // rowMainAxisAlignment: MainAxisAlignment.start,
+        //   // rowCrossAxisAlignment: CrossAxisAlignment.start,
+        //   // columnMainAxisAlignment: MainAxisAlignment.start,
+        //   // columnCrossAxisAlignment: CrossAxisAlignment.start,
+        //   layout: ResponsiveRowColumnType.COLUMN,
+        //   children: [
+        //     ResponsiveRowColumnItem(
+        //       child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+        //           ? mobilesidebarButton(FontAwesomeIcons.comment)
+        //           : desktopsidebarButton(context, "chats", FontAwesomeIcons.bars),
+        //     ),
+        //   ],
+        // ),
+      ],
+    ),
+  );
 }
