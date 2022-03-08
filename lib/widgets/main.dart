@@ -2,12 +2,12 @@ import 'package:essayguru/constants/const.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Widget desktopsidebarButton(
-    BuildContext context, String text, IconData awesomeIcons, String indicatorText, bool isNotification) {
+Widget desktopsidebarButton(BuildContext context, String text, IconData awesomeIcons, String indicatorText,
+    bool isNotification, String pathToLink) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: TextButton.icon(
-      onPressed: () => Navigator.pushNamed(context, home),
+      onPressed: () => Navigator.pushReplacementNamed(context, pathToLink),
       icon: Icon(awesomeIcons, color: textColor, size: 12),
       label: Row(
         children: [
@@ -156,35 +156,48 @@ Widget orderTileCard(BuildContext context) {
 }
 
 Widget chatTileCard() {
-  return Column(
-    children: [
-      ListTile(
-          contentPadding: const EdgeInsets.all(7),
-          // minVerticalPadding: 7,
-          title: Row(
-            children: [
-              const Text(
-                "788917 Discussion",
-                style: TextStyle(fontSize: 13),
-              ),
-              const Expanded(child: SizedBox()),
-              Text(
-                "14 hours ago",
-                style: TextStyle(fontSize: 13, color: greytextColor),
-              ),
-            ],
-          ),
-          subtitle: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              "You: lorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor",
-              style: TextStyle(fontSize: 13),
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              "788917 Discussion",
+              style: TextStyle(fontSize: 11),
             ),
-          ),
-          trailing: const Icon(
-            FontAwesomeIcons.chevronRight,
-          )),
-      Divider(color: myPrimaryColor.withOpacity(0.2)),
-    ],
+            const Expanded(child: SizedBox()),
+            Text(
+              "14 hours ago",
+              style: TextStyle(fontSize: 11, color: greytextColor),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Flexible(
+              child: Padding(
+                padding: EdgeInsets.all(4.0),
+                child: Text(
+                  "You: lorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor lorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor lorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor",
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 12),
+                  strutStyle: StrutStyle(height: 1.2),
+                ),
+              ),
+            ),
+            Icon(
+              Icons.arrow_right_sharp,
+            ),
+          ],
+        ),
+        Divider(color: myPrimaryColor.withOpacity(0.2)),
+      ],
+    ),
   );
 }

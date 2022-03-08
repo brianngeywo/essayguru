@@ -1,10 +1,11 @@
 import 'package:essayguru/constants/const.dart';
-import 'package:essayguru/ui/homepage/sections/available_orders_section.dart';
+import 'package:essayguru/routes.dart';
 import 'package:essayguru/sections/sidebars.dart';
+import 'package:essayguru/ui/my_bids/sections/my_bids_section.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({
+class MainBidsPage extends StatelessWidget {
+  const MainBidsPage({
     Key? key,
   }) : super(key: key);
 
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: Container(
                 color: myPrimaryColor,
-                child: const AvailableOrderPage(),
+                child: const MyBidsSection(),
                 padding: const EdgeInsets.all(15),
               ),
             ),

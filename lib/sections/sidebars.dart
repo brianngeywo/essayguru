@@ -95,55 +95,60 @@ Widget sidebar(BuildContext context) {
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.user)
-                        : desktopsidebarButton(context, "JEFF S.", FontAwesomeIcons.userAlt, "", false),
+                        : desktopsidebarButton(context, "JEFF S.", FontAwesomeIcons.userAlt, "", false, home),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.moneyBillWaveAlt)
-                        : desktopsidebarButton(
-                            context, "balance", FontAwesomeIcons.moneyBillWaveAlt, "\$792.05", false),
+                        : desktopsidebarButton(context, "balance", FontAwesomeIcons.moneyBillWaveAlt, "\$792.05", false,
+                            accountPaymentAndTransactionsPage),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.bell)
-                        : desktopsidebarButton(context, "notifications", FontAwesomeIcons.bell, "", true),
+                        : desktopsidebarButton(
+                            context, "notifications", FontAwesomeIcons.bell, "", true, notificationsPage),
                   ),
                   ResponsiveRowColumnItem(child: Divider(color: textColor.withOpacity(0.3))),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.clipboardList)
-                        : desktopsidebarButton(context, "available orders", FontAwesomeIcons.clipboardList, "", false),
+                        : desktopsidebarButton(
+                            context, "available orders", FontAwesomeIcons.clipboardList, "", false, home),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.userCheck)
-                        : desktopsidebarButton(context, "my bids", FontAwesomeIcons.userCheck, "", true),
+                        : desktopsidebarButton(context, "my bids", FontAwesomeIcons.userCheck, "", true, myBids),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.clipboardCheck)
-                        : desktopsidebarButton(context, "my orders", FontAwesomeIcons.clipboardCheck, "", false),
+                        : desktopsidebarButton(
+                            context, "my orders", FontAwesomeIcons.clipboardCheck, "", false, myOrders),
                   ),
                   ResponsiveRowColumnItem(child: Divider(color: textColor.withOpacity(0.3))),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.commentDots)
-                        : desktopsidebarButton(context, "chats", FontAwesomeIcons.commentDots, "", false),
+                        : desktopsidebarButton(context, "chats", FontAwesomeIcons.commentDots, "", false, home),
                   ),
-                  ResponsiveRowColumnItem(
-                    child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                        ? mobilesidebarButton(FontAwesomeIcons.star)
-                        : desktopsidebarButton(context, "position in rating", FontAwesomeIcons.star, "120", false),
-                  ),
+                  // ResponsiveRowColumnItem(
+                  //   child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  //       ? mobilesidebarButton(FontAwesomeIcons.star)
+                  //       : desktopsidebarButton(
+                  //           context, "position in rating", FontAwesomeIcons.star, "120", false, home),
+                  // ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.comment)
-                        : desktopsidebarButton(context, "help center", FontAwesomeIcons.comments, "", false),
+                        : desktopsidebarButton(context, "help center", FontAwesomeIcons.comments, "", false, home),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.infoCircle)
-                        : desktopsidebarButton(context, "rules & tips", FontAwesomeIcons.infoCircle, "", false),
+                        : desktopsidebarButton(
+                            context, "rules & tips", FontAwesomeIcons.infoCircle, "", false, rulesAndTipsPage),
                   ),
                   ResponsiveRowColumnItem(child: Divider(color: textColor.withOpacity(0.3))),
                 ],

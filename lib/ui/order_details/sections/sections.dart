@@ -33,20 +33,22 @@ Widget bidOrderSection() {
               ),
             ],
           ),
+          SizedBox(height: 9),
           Text(
             "My share \$24.00 (50%)",
             style: TextStyle(
               fontWeight: FontWeight.w300,
               color: inactiveLinkTextColor,
-              fontSize: 13,
+              fontSize: 12,
             ),
           ),
+          SizedBox(height: 6),
           Text(
             "25 open bids",
             style: TextStyle(
               fontWeight: FontWeight.w300,
               color: inactiveLinkTextColor,
-              fontSize: 13,
+              fontSize: 12,
             ),
           ),
           const Expanded(
@@ -109,27 +111,29 @@ Widget customerSummaryCard(BuildContext context) {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "526551",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: textColor,
-                            fontSize: 10,
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "526551",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: textColor,
+                              fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 12,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          "English US",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey.shade700,
-                            fontSize: 10,
+                          const SizedBox(height: 4),
+                          Text(
+                            "English US",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey.shade700,
+                              fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 11.5,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -269,7 +273,7 @@ Widget chatWithClientCard(BuildContext context) {
   );
 }
 
-Widget orderSummaryCard() {
+Widget orderSummaryCard(BuildContext context) {
   return Container(
     color: mySecondaryColor,
     padding: const EdgeInsets.all(10.0),
@@ -289,16 +293,17 @@ Widget orderSummaryCard() {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
+                    orderSummaryCardSubjectAndTopicsRow(context, "assignment Type:", " Essay (any type)"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, "Pages/words:", "9 pages / 2475 words (Double spacing)"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Citation Style:", "APA 6th Edition"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Min. price:", "\$123.16"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Language:", "English (US)"),
+                    Divider(color: dividerColor),
                   ],
                 ),
               ),
@@ -312,22 +317,73 @@ Widget orderSummaryCard() {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
-                    orderSummaryCardSubjectAndTopicsRow(),
-                    const Divider(color: Colors.grey),
+                    orderSummaryCardSubjectAndTopicsRow(context, " Service:", "Writing"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Education Level:", "Master's"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Subject:", "Urban and Environmental Planning"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Your Deadline:", "May 25, 12:40 AM"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Writer's Deadline", "May 24, 12:40 AM"),
+                    Divider(color: dividerColor),
                   ],
                 ),
               ),
             ),
           ],
         ),
+        Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              padding: const EdgeInsets.only(top: 3.0, bottom: 3.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Attached files: 5",
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: inactiveLinkTextColor,
+                    ),
+                  ),
+                  const Text(
+                    "View files",
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+            )),
+        Divider(color: dividerColor),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Description",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: textColor,
+              fontSize: 12,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "lorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolor lorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolorlorem ipsum dolor sit amet lorem  lorem ipsum dolor sit amet lorem  lorem ipsum dolor   sit amet lorem ipsum dolor sit amet lorem   lorem ipsum dolor ",
+            textAlign: TextAlign.left,
+            strutStyle: const StrutStyle(
+              height: 1.5,
+            ),
+            style: TextStyle(
+              color: textColor.withOpacity(0.8),
+              fontSize: 11,
+            ),
+          ),
+        ),
+        const SizedBox(height: 20),
       ],
     ),
   );

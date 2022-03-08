@@ -1,3 +1,5 @@
+import 'package:essayguru/constants/const.dart';
+import 'package:essayguru/routes.dart';
 import 'package:essayguru/ui/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -13,7 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: (context, widget) => ResponsiveWrapper.builder(
-        const HomePage(title: 'EssayGURU'),
+        const MaterialApp(
+          onGenerateRoute: Routes.generatedPageRoutes,
+          debugShowCheckedModeBanner: false,
+          initialRoute: home,
+          home: HomePage(),
+        ),
         defaultScale: true,
         breakpoints: const [
           ResponsiveBreakpoint.resize(480, name: MOBILE),

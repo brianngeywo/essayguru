@@ -2,21 +2,21 @@ import 'package:essayguru/widgets/main.dart';
 import 'package:flutter/material.dart';
 import 'package:essayguru/constants/const.dart';
 
-class AvailableOrderPage extends StatefulWidget {
-  const AvailableOrderPage({Key? key}) : super(key: key);
+class MyOrdersSection extends StatefulWidget {
+  const MyOrdersSection({Key? key}) : super(key: key);
 
   @override
-  State<AvailableOrderPage> createState() => _AvailableOrderPageState();
+  State<MyOrdersSection> createState() => _MyOrdersSectionState();
 }
 
-class _AvailableOrderPageState extends State<AvailableOrderPage> with SingleTickerProviderStateMixin {
+class _MyOrdersSectionState extends State<MyOrdersSection> with SingleTickerProviderStateMixin {
   late TabController _controller;
   // ignore: unused_field
   int _selectedindex = 0;
   List<Tab> myTabs = <Tab>[
-    Tab(text: "all".toUpperCase()),
-    Tab(text: "invited".toUpperCase()),
-    Tab(text: "HIDDEN".toUpperCase()),
+    Tab(text: "in progress".toUpperCase()),
+    Tab(text: "completed".toUpperCase()),
+    Tab(text: "canceled".toUpperCase()),
   ];
 
   @override
@@ -41,7 +41,7 @@ class _AvailableOrderPageState extends State<AvailableOrderPage> with SingleTick
         title: Padding(
           padding: const EdgeInsets.only(top: 20, bottom: 15),
           child: Text(
-            "Available Orders",
+            "My Orders",
             style: TextStyle(
               color: textColor,
               fontSize: 28,
@@ -53,18 +53,6 @@ class _AvailableOrderPageState extends State<AvailableOrderPage> with SingleTick
       body: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Scaffold(
-          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-          floatingActionButton: FloatingActionButton.extended(
-            onPressed: () {},
-            backgroundColor: Colors.green.shade900,
-            label: Text(
-              "Get help",
-              style: TextStyle(
-                color: textColor,
-                fontSize: 11,
-              ),
-            ),
-          ),
           backgroundColor: myPrimaryColor,
           appBar: AppBar(
             automaticallyImplyLeading: false,

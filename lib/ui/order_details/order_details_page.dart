@@ -120,7 +120,7 @@ class OrderDetailsPage extends StatelessWidget {
             ],
           ),
         ),
-        orderSummaryCard(),
+        orderSummaryCard(context),
       ],
     );
   }
