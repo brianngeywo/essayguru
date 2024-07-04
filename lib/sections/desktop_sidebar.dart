@@ -4,28 +4,32 @@ import 'package:essayguru/ui/my_bids/main.dart';
 import 'package:essayguru/ui/notifications/main.dart';
 import 'package:essayguru/ui/payments/main.dart';
 import 'package:essayguru/ui/rules_and_tips/main.dart';
+import 'package:essayguru/widgets/desktop_side_bar_button.dart';
 import 'package:essayguru/widgets/main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class DesktopSidebar extends StatelessWidget {
-  const DesktopSidebar({Key? key}) : super(key: key);
+import '../int_controller.dart';
 
+class DesktopSidebar extends StatelessWidget {
+  DesktopSidebar({Key? key, required this.intController})
+      : super(key: key);
+  final IntController intController;
   @override
   Widget build(BuildContext context) {
     return Container(
       color: mySecondaryColor,
       width: 430,
       child: ListView(
-        physics: const NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         children: [
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
             width: double.infinity,
             color: myPrimaryColor,
             child: Text(
               "EssayGURU",
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.start,
               style: TextStyle(
                 color: textColor,
                 fontWeight: FontWeight.bold,
@@ -34,7 +38,7 @@ class DesktopSidebar extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
             width: double.infinity,
             color: myPrimaryColor,
             child: ListTile(
@@ -47,7 +51,7 @@ class DesktopSidebar extends StatelessWidget {
                 ),
               ),
               trailing: Container(
-                margin: const EdgeInsets.all(5.0),
+                margin: EdgeInsets.all(5.0),
                 child: MaterialButton(
                     onPressed: () {},
                     color: Colors.green,
@@ -62,46 +66,80 @@ class DesktopSidebar extends StatelessWidget {
               ),
             ),
           ),
-          desktopsidebarButton(context, "JEFF S.", FontAwesomeIcons.userAlt, "",
-              false, HomePage.routeName),
-          desktopsidebarButton(
-              context,
-              "balance",
-              FontAwesomeIcons.moneyBillWaveAlt,
-              "\$792.05",
-              false,
-              MainPaymentsPage.routeName),
-          desktopsidebarButton(context, "notifications", FontAwesomeIcons.bell,
-              "", true, MainNotificationsPage.routeName),
+         DesktopSideBarButton(
+            text: "JEFF S.",
+            awesomeIcons: FontAwesomeIcons.userAlt,
+            indicatorText: "",
+            isNotification: false,
+            page: 0,
+            intController: intController, // AvailableOrderPage
+          ),
+          DesktopSideBarButton(
+            text: "balance",
+            awesomeIcons: FontAwesomeIcons.moneyBillWaveAlt,
+            indicatorText: "\$792.05",
+            isNotification: false,
+            page: 6, // MainPaymentsPage
+             intController: intController,
+          ),
+          DesktopSideBarButton(
+            text: "notifications",
+            awesomeIcons: FontAwesomeIcons.bell,
+            indicatorText: "",
+            isNotification: true,
+            page: 4, // MainNotificationsPage
+             intController: intController,
+          ),
           Divider(color: textColor.withOpacity(0.3)),
-          desktopsidebarButton(context, "available orders",
-              FontAwesomeIcons.clipboardList, "", false, HomePage.routeName),
-          desktopsidebarButton(context, "my bids", FontAwesomeIcons.userCheck,
-              "", true, MainBidsPage.routeName),
-          desktopsidebarButton(
-              context,
-              "my orders",
-              FontAwesomeIcons.clipboardCheck,
-              "",
-              false,
-              MainBidsPage.routeName),
+          DesktopSideBarButton(
+            text: "available orders",
+            awesomeIcons: FontAwesomeIcons.clipboardList,
+            indicatorText: "",
+            isNotification: false,
+            page: 0, // AvailableOrderPage
+             intController: intController,
+          ),
+          DesktopSideBarButton(
+            text: "my bids",
+            awesomeIcons: FontAwesomeIcons.userCheck,
+            indicatorText: "",
+            isNotification: true,
+            page: 2, // MainBidsPage
+             intController: intController,
+          ),
+          DesktopSideBarButton(
+            text: "my orders",
+            awesomeIcons: FontAwesomeIcons.clipboardCheck,
+            indicatorText: "",
+            isNotification: false,
+            page: 1, // MainOrdersPage
+             intController: intController,
+          ),
           Divider(color: textColor.withOpacity(0.3)),
-          desktopsidebarButton(context, "chats", FontAwesomeIcons.commentDots,
-              "", false, HomePage.routeName),
-          desktopsidebarButton(
-              context,
-              "help center",
-              FontAwesomeIcons.comments,
-              "",
-              false,
-              MainRulesAndTipsPage.routeName),
-          desktopsidebarButton(
-              context,
-              "rules & tips",
-              FontAwesomeIcons.infoCircle,
-              "",
-              false,
-              MainRulesAndTipsPage.routeName),
+          DesktopSideBarButton(
+            text: "chats",
+            awesomeIcons: FontAwesomeIcons.commentDots,
+            indicatorText: "",
+            isNotification: false,
+            page: 0, // AvailableOrderPage (assuming no dedicated chat page)
+             intController: intController,
+          ),
+          DesktopSideBarButton(
+            text: "help center",
+            awesomeIcons: FontAwesomeIcons.comments,
+            indicatorText: "",
+            isNotification: false,
+            page: 5, // MainRulesAndTipsPage
+             intController: intController,
+          ),
+          DesktopSideBarButton(
+            text: "rules & tips",
+            awesomeIcons: FontAwesomeIcons.infoCircle,
+            indicatorText: "",
+            isNotification: false,
+            page: 5, // MainRulesAndTipsPage
+             intController: intController,
+          ),
           Divider(color: textColor.withOpacity(0.3)),
         ],
       ),

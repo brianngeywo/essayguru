@@ -15,22 +15,12 @@ class OrderDetailsPage extends StatelessWidget {
           margin: const EdgeInsets.all(5),
           alignment: Alignment.centerLeft,
           height: 70,
-          child: TextButton.icon(
-            onPressed: () {},
-            label: Text(
-              "Order 7824173",
-              style: TextStyle(
-                color: textColor,
-                fontSize: 23,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            icon: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                FontAwesomeIcons.chevronLeft,
-                color: textColor,
-              ),
+          child: Text(
+            "Order 7824173",
+            style: TextStyle(
+              color: textColor,
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

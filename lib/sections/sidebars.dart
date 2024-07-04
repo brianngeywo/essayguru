@@ -3,7 +3,6 @@ import 'package:essayguru/ui/homepage/homepage.dart';
 import 'package:essayguru/ui/my_bids/main.dart';
 import 'package:essayguru/ui/my_orders/main.dart';
 import 'package:essayguru/ui/notifications/main.dart';
-import 'package:essayguru/ui/notifications/notifications_page.dart';
 import 'package:essayguru/ui/payments/main.dart';
 import 'package:essayguru/ui/rules_and_tips/main.dart';
 import 'package:essayguru/widgets/main.dart';
@@ -34,15 +33,16 @@ Widget sidebar(BuildContext context) {
           if (ResponsiveWrapper.of(context).isDesktop)
             Container(
               padding: const EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: 12),
               width: double.infinity,
               color: myPrimaryColor,
               child: Text(
                 "EssayGURU",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.start,
                 style: TextStyle(
                   color: textColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  fontSize: 20,
                 ),
               ),
             )

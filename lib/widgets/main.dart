@@ -3,8 +3,13 @@ import 'package:essayguru/ui/order_details/main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Widget desktopsidebarButton(BuildContext context, String text, IconData awesomeIcons, String indicatorText,
-    bool isNotification, String pathToLink) {
+Widget desktopsidebarButton(
+    BuildContext context,
+    String text,
+    IconData awesomeIcons,
+    String indicatorText,
+    bool isNotification,
+    String pathToLink) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: TextButton.icon(
@@ -74,7 +79,8 @@ Widget orderTileCard(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 5.0),
     child: GestureDetector(
-      onTap: () => Navigator.restorablePushNamed(context, MainOrderDetailsPage.routeName),
+      onTap: () => Navigator.restorablePushNamed(
+          context, MainOrderDetailsPage.routeName),
       child: ListTile(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         tileColor: mySecondaryColor,

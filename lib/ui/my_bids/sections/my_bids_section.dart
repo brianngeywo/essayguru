@@ -43,7 +43,7 @@ class _MyBidsSectionState extends State<MyBidsSection>
           body: ListView(
             children: [
               orderTileCard(context),
-              orderTileCard(context),
+              // orderTileCard(context),
             ],
           ),
         ),
