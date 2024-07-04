@@ -5,6 +5,8 @@ import 'package:essayguru/ui/my_bids/sections/my_bids_section.dart';
 import 'package:flutter/material.dart';
 
 class MainBidsPage extends StatelessWidget {
+  static const routeName = "/main_bids_page";
+
   const MainBidsPage({
     Key? key,
   }) : super(key: key);

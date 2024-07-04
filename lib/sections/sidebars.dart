@@ -1,4 +1,11 @@
 import 'package:essayguru/constants/const.dart';
+import 'package:essayguru/ui/homepage/homepage.dart';
+import 'package:essayguru/ui/my_bids/main.dart';
+import 'package:essayguru/ui/my_orders/main.dart';
+import 'package:essayguru/ui/notifications/main.dart';
+import 'package:essayguru/ui/notifications/notifications_page.dart';
+import 'package:essayguru/ui/payments/main.dart';
+import 'package:essayguru/ui/rules_and_tips/main.dart';
 import 'package:essayguru/widgets/main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -97,8 +104,13 @@ Widget sidebar(BuildContext context) {
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.user)
-                        : desktopsidebarButton(context, "JEFF S.",
-                            FontAwesomeIcons.userAlt, "", false, home),
+                        : desktopsidebarButton(
+                            context,
+                            "JEFF S.",
+                            FontAwesomeIcons.userAlt,
+                            "",
+                            false,
+                            HomePage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
@@ -109,27 +121,42 @@ Widget sidebar(BuildContext context) {
                             FontAwesomeIcons.moneyBillWaveAlt,
                             "\$792.05",
                             false,
-                            accountPaymentAndTransactionsPage),
+                            MainPaymentsPage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.bell)
-                        : desktopsidebarButton(context, "notifications",
-                            FontAwesomeIcons.bell, "", true, notificationsPage),
+                        : desktopsidebarButton(
+                            context,
+                            "notifications",
+                            FontAwesomeIcons.bell,
+                            "",
+                            true,
+                            MainNotificationsPage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                       child: Divider(color: textColor.withOpacity(0.3))),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.clipboardList)
-                        : desktopsidebarButton(context, "available orders",
-                            FontAwesomeIcons.clipboardList, "", false, home),
+                        : desktopsidebarButton(
+                            context,
+                            "available orders",
+                            FontAwesomeIcons.clipboardList,
+                            "",
+                            false,
+                            HomePage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.userCheck)
-                        : desktopsidebarButton(context, "my bids",
-                            FontAwesomeIcons.userCheck, "", true, myBids),
+                        : desktopsidebarButton(
+                            context,
+                            "my bids",
+                            FontAwesomeIcons.userCheck,
+                            "",
+                            true,
+                            MainBidsPage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
@@ -140,15 +167,20 @@ Widget sidebar(BuildContext context) {
                             FontAwesomeIcons.clipboardCheck,
                             "",
                             false,
-                            myOrders),
+                            MainOrdersPage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                       child: Divider(color: textColor.withOpacity(0.3))),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.commentDots)
-                        : desktopsidebarButton(context, "chats",
-                            FontAwesomeIcons.commentDots, "", false, home),
+                        : desktopsidebarButton(
+                            context,
+                            "chats",
+                            FontAwesomeIcons.commentDots,
+                            "",
+                            false,
+                            HomePage.routeName),
                   ),
                   // ResponsiveRowColumnItem(
                   //   child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
@@ -159,8 +191,13 @@ Widget sidebar(BuildContext context) {
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.comment)
-                        : desktopsidebarButton(context, "help center",
-                            FontAwesomeIcons.comments, "", false, home),
+                        : desktopsidebarButton(
+                            context,
+                            "help center",
+                            FontAwesomeIcons.comments,
+                            "",
+                            false,
+                            MainRulesAndTipsPage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
@@ -171,7 +208,7 @@ Widget sidebar(BuildContext context) {
                             FontAwesomeIcons.infoCircle,
                             "",
                             false,
-                            rulesAndTipsPage),
+                            MainRulesAndTipsPage.routeName),
                   ),
                   ResponsiveRowColumnItem(
                       child: Divider(color: textColor.withOpacity(0.3))),

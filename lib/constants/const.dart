@@ -7,11 +7,4 @@ Color greytextColor = const Color.fromARGB(255, 94, 94, 94);
 Color inactiveLinkTextColor = const Color.fromARGB(255, 192, 192, 192);
 Color dividerColor = Color.fromARGB(255, 240, 240, 240).withOpacity(0.3);
 Color deadlineTimeColor = const Color.fromARGB(255, 150, 32, 32);
-//Routes
-const String home = '/';
-const String mainOrderDetailsPage = '/details';
-const String myOrders = '/myOrders';
-const String myBids = '/myBids';
-const String notificationsPage = '/notificationsPage';
-const String rulesAndTipsPage = '/rulesAndTips';
-const String accountPaymentAndTransactionsPage = '/accountPaymentAndTransactions';
+

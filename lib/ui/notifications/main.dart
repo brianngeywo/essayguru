@@ -5,6 +5,8 @@ import 'package:essayguru/ui/notifications/notifications_page.dart';
 import 'package:flutter/material.dart';
 
 class MainNotificationsPage extends StatelessWidget {
+  static const routeName = "/notifications";
+
   const MainNotificationsPage({
     Key? key,
   }) : super(key: key);

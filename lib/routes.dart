@@ -10,25 +10,31 @@ import 'package:flutter/material.dart';
 
 class Routes {
   static Route generatedPageRoutes(RouteSettings settings) {
+    return MaterialPageRoute<void>(
+      settings: settings,
+      builder: (BuildContext context) {
+        switch (settings.name) {
+          case HomePage.routeName:
+            return const HomePage();
+          case MainOrdersPage.routeName:
+            return const MainOrdersPage();
+          case MainBidsPage.routeName:
+            return const MainBidsPage();
+          case MainOrderDetailsPage.routeName:
+            return const MainOrderDetailsPage();
+          case MainNotificationsPage.routeName:
+            return const MainNotificationsPage();
+          case MainRulesAndTipsPage.routeName:
+            return const MainRulesAndTipsPage();
+          case MainPaymentsPage.routeName:
+            return const MainPaymentsPage();
+          default:
+            return Scaffold(
+                body: Center(
+                    child: Text('No route defined for ${settings.name}')));
+        }
+      },
+    );
     // implement business logic here
-    switch (settings.name) {
-      case home:
-        return MaterialPageRoute(builder: (_) => const HomePage());
-      case myOrders:
-        return MaterialPageRoute(builder: (_) => const MainOrdersPage());
-      case myBids:
-        return MaterialPageRoute(builder: (_) => const MainBidsPage());
-      case mainOrderDetailsPage:
-        return MaterialPageRoute(builder: (_) => const MainOrderDetailsPage());
-      case notificationsPage:
-        return MaterialPageRoute(builder: (_) => const MainNotificationsPage());
-      case rulesAndTipsPage:
-        return MaterialPageRoute(builder: (_) => const MainRulesAndTipsPage());
-              case accountPaymentAndTransactionsPage:
-        return MaterialPageRoute(builder: (_) => const MainPaymentsPage());
-      default:
-        return MaterialPageRoute(
-            builder: (_) => Scaffold(body: Center(child: Text('No route defined for ${settings.name}'))));
-    }
   }
 }

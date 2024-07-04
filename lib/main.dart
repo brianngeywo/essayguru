@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         const MaterialApp(
           onGenerateRoute: Routes.generatedPageRoutes,
           debugShowCheckedModeBanner: false,
-          initialRoute: home,
+          initialRoute: HomePage.routeName,
           home: HomePage(),
         ),
         defaultScale: true,

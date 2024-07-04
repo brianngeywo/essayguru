@@ -4,6 +4,8 @@ import 'package:essayguru/ui/order_details/order_details_page.dart';
 import 'package:flutter/material.dart';
 
 class MainOrderDetailsPage extends StatelessWidget {
+  static const routeName = "/main_order_details_page";
+
   const MainOrderDetailsPage({Key? key}) : super(key: key);
 
   @override

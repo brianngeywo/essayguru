@@ -1,4 +1,5 @@
 import 'package:essayguru/constants/const.dart';
+import 'package:essayguru/ui/order_details/main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,7 +8,7 @@ Widget desktopsidebarButton(BuildContext context, String text, IconData awesomeI
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: TextButton.icon(
-      onPressed: () => Navigator.pushReplacementNamed(context, pathToLink),
+      onPressed: () => Navigator.restorablePushNamed(context, pathToLink),
       icon: Icon(awesomeIcons, color: textColor, size: 12),
       label: Row(
         children: [
@@ -73,7 +74,7 @@ Widget orderTileCard(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 5.0),
     child: GestureDetector(
-      onTap: () => Navigator.pushNamed(context, mainOrderDetailsPage),
+      onTap: () => Navigator.restorablePushNamed(context, MainOrderDetailsPage.routeName),
       child: ListTile(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         tileColor: mySecondaryColor,

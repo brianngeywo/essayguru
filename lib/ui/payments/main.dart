@@ -5,6 +5,8 @@ import 'package:essayguru/ui/payments/payments_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPaymentsPage extends StatelessWidget {
+  static const routeName = "/payments";
+
   const MainPaymentsPage({
     Key? key,
   }) : super(key: key);

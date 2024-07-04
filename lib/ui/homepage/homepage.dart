@@ -4,6 +4,7 @@ import 'package:essayguru/sections/sidebars.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  static const routeName = "/homepage";
   const HomePage({
     Key? key,
   }) : super(key: key);
