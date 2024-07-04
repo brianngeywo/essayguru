@@ -19,7 +19,7 @@ Widget sidebar(BuildContext context) {
         )
       : Container(
           color: mySecondaryColor,
-          width: ResponsiveWrapper.of(context).isTablet ? 50 : 230,
+          width: ResponsiveWrapper.of(context).isTablet ? 50 : 430,
           child: ListView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
@@ -42,7 +42,9 @@ Widget sidebar(BuildContext context) {
                       ? Container(
                           padding: const EdgeInsets.all(10),
                           width: double.infinity,
-                          color: ResponsiveWrapper.of(context).isTablet ? mySecondaryColor : myPrimaryColor,
+                          color: ResponsiveWrapper.of(context).isTablet
+                              ? mySecondaryColor
+                              : myPrimaryColor,
                           child: Text(
                             "EG",
                             textAlign: TextAlign.center,
@@ -95,43 +97,58 @@ Widget sidebar(BuildContext context) {
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.user)
-                        : desktopsidebarButton(context, "JEFF S.", FontAwesomeIcons.userAlt, "", false, home),
+                        : desktopsidebarButton(context, "JEFF S.",
+                            FontAwesomeIcons.userAlt, "", false, home),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.moneyBillWaveAlt)
-                        : desktopsidebarButton(context, "balance", FontAwesomeIcons.moneyBillWaveAlt, "\$792.05", false,
+                        : desktopsidebarButton(
+                            context,
+                            "balance",
+                            FontAwesomeIcons.moneyBillWaveAlt,
+                            "\$792.05",
+                            false,
                             accountPaymentAndTransactionsPage),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.bell)
-                        : desktopsidebarButton(
-                            context, "notifications", FontAwesomeIcons.bell, "", true, notificationsPage),
+                        : desktopsidebarButton(context, "notifications",
+                            FontAwesomeIcons.bell, "", true, notificationsPage),
                   ),
-                  ResponsiveRowColumnItem(child: Divider(color: textColor.withOpacity(0.3))),
+                  ResponsiveRowColumnItem(
+                      child: Divider(color: textColor.withOpacity(0.3))),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.clipboardList)
-                        : desktopsidebarButton(
-                            context, "available orders", FontAwesomeIcons.clipboardList, "", false, home),
+                        : desktopsidebarButton(context, "available orders",
+                            FontAwesomeIcons.clipboardList, "", false, home),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.userCheck)
-                        : desktopsidebarButton(context, "my bids", FontAwesomeIcons.userCheck, "", true, myBids),
+                        : desktopsidebarButton(context, "my bids",
+                            FontAwesomeIcons.userCheck, "", true, myBids),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.clipboardCheck)
                         : desktopsidebarButton(
-                            context, "my orders", FontAwesomeIcons.clipboardCheck, "", false, myOrders),
+                            context,
+                            "my orders",
+                            FontAwesomeIcons.clipboardCheck,
+                            "",
+                            false,
+                            myOrders),
                   ),
-                  ResponsiveRowColumnItem(child: Divider(color: textColor.withOpacity(0.3))),
+                  ResponsiveRowColumnItem(
+                      child: Divider(color: textColor.withOpacity(0.3))),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.commentDots)
-                        : desktopsidebarButton(context, "chats", FontAwesomeIcons.commentDots, "", false, home),
+                        : desktopsidebarButton(context, "chats",
+                            FontAwesomeIcons.commentDots, "", false, home),
                   ),
                   // ResponsiveRowColumnItem(
                   //   child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
@@ -142,15 +159,22 @@ Widget sidebar(BuildContext context) {
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.comment)
-                        : desktopsidebarButton(context, "help center", FontAwesomeIcons.comments, "", false, home),
+                        : desktopsidebarButton(context, "help center",
+                            FontAwesomeIcons.comments, "", false, home),
                   ),
                   ResponsiveRowColumnItem(
                     child: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                         ? mobilesidebarButton(FontAwesomeIcons.infoCircle)
                         : desktopsidebarButton(
-                            context, "rules & tips", FontAwesomeIcons.infoCircle, "", false, rulesAndTipsPage),
+                            context,
+                            "rules & tips",
+                            FontAwesomeIcons.infoCircle,
+                            "",
+                            false,
+                            rulesAndTipsPage),
                   ),
-                  ResponsiveRowColumnItem(child: Divider(color: textColor.withOpacity(0.3))),
+                  ResponsiveRowColumnItem(
+                      child: Divider(color: textColor.withOpacity(0.3))),
                 ],
               ),
             ],
@@ -161,7 +185,7 @@ Widget sidebar(BuildContext context) {
 Widget chatSidebar(BuildContext context) {
   return Container(
     color: textColor,
-    width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 0 : 320,
+    width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 0 : 420,
     child: ListView(
       // mainAxisAlignment: MainAxisAlignment.start,
       // crossAxisAlignment: CrossAxisAlignment.start,

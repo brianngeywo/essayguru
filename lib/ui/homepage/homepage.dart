@@ -10,24 +10,29 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return HomePageLayoutExtension.defaultLayout(context: context);
+  }
+}
+
+extension HomePageLayoutExtension on Widget {
+  static Widget defaultLayout({required BuildContext context}) {
     return Scaffold(
-        backgroundColor: myPrimaryColor,
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            sidebar(context),
-            Expanded(
-              child: Container(
-                color: myPrimaryColor,
-                child: const AvailableOrderPage(),
-                padding: const EdgeInsets.all(15),
-              ),
+      backgroundColor: myPrimaryColor,
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          sidebar(context),
+          Expanded(
+            child: Container(
+              color: myPrimaryColor,
+              child: const AvailableOrderPage(),
+              padding: const EdgeInsets.all(15),
             ),
-            chatSidebar(context),
-          ],
-        ),
-      
+          ),
+          chatSidebar(context),
+        ],
+      ),
     );
   }
 }
