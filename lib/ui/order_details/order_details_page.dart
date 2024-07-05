@@ -79,11 +79,11 @@ class OrderDetailsPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Icon(
-                  FontAwesomeIcons.ellipsisV,
-                  size: 15,
-                  color: textColor,
-                ),
+                // Icon(
+                //   FontAwesomeIcons.ellipsisV,
+                //   size: 15,
+                //   color: textColor,
+                // ),
               ],
             ),
           ),

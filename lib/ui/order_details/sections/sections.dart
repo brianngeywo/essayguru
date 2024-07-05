@@ -26,11 +26,11 @@ Widget bidOrderSection() {
                   fontSize: 15,
                 ),
               ),
-              Icon(
-                FontAwesomeIcons.ellipsisV,
-                color: inactiveLinkTextColor,
-                size: 15,
-              ),
+              // Icon(
+              //   FontAwesomeIcons.ellipsisV,
+              //   color: inactiveLinkTextColor,
+              //   size: 15,
+              // ),
             ],
           ),
           SizedBox(height: 9),
@@ -105,7 +105,10 @@ Widget customerSummaryCard(BuildContext context) {
                 children: [
                   Center(
                     child: CircleAvatar(
-                      radius: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 15 : 20,
+                      radius:
+                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                              ? 15
+                              : 20,
                       backgroundColor: Colors.grey,
                     ),
                   ),
@@ -120,16 +123,22 @@ Widget customerSummaryCard(BuildContext context) {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: textColor,
-                              fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 12,
+                              fontSize: ResponsiveWrapper.of(context)
+                                      .isSmallerThan(DESKTOP)
+                                  ? 10
+                                  : 12,
                             ),
                           ),
-                          const SizedBox(height: 4),
+                          const SizedBox(height: 2.5),
                           Text(
                             "English US",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.grey.shade700,
-                              fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 11.5,
+                              color: Colors.white.withOpacity(0.5),
+                              fontSize: ResponsiveWrapper.of(context)
+                                      .isSmallerThan(DESKTOP)
+                                  ? 10
+                                  : 11.5,
                             ),
                           ),
                         ],
@@ -155,7 +164,10 @@ Widget customerSummaryCard(BuildContext context) {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: textColor,
-                          fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 12,
+                          fontSize: ResponsiveWrapper.of(context)
+                                  .isSmallerThan(DESKTOP)
+                              ? 10
+                              : 12,
                         ),
                       ),
                       const SizedBox(height: 5),
@@ -179,7 +191,10 @@ Widget customerSummaryCard(BuildContext context) {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: textColor,
-                          fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 12,
+                          fontSize: ResponsiveWrapper.of(context)
+                                  .isSmallerThan(DESKTOP)
+                              ? 10
+                              : 12,
                         ),
                       ),
                       const SizedBox(height: 5),
@@ -203,7 +218,10 @@ Widget customerSummaryCard(BuildContext context) {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: textColor,
-                          fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 12,
+                          fontSize: ResponsiveWrapper.of(context)
+                                  .isSmallerThan(DESKTOP)
+                              ? 10
+                              : 12,
                         ),
                       ),
                       const SizedBox(height: 5),
@@ -228,7 +246,10 @@ Widget customerSummaryCard(BuildContext context) {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: textColor,
-                          fontSize: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP) ? 10 : 12,
+                          fontSize: ResponsiveWrapper.of(context)
+                                  .isSmallerThan(DESKTOP)
+                              ? 10
+                              : 12,
                         ),
                       ),
                       const SizedBox(height: 5),
@@ -293,16 +314,20 @@ Widget orderSummaryCard(BuildContext context) {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    orderSummaryCardSubjectAndTopicsRow(context, "assignment Type:", " Essay (any type)"),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, "assignment Type:", " Essay (any type)"),
+                    Divider(color: dividerColor),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Pages/words:",
+                        "9 pages / 2475 words (Double spacing)"),
                     Divider(color: dividerColor),
                     orderSummaryCardSubjectAndTopicsRow(
-                        context, "Pages/words:", "9 pages / 2475 words (Double spacing)"),
+                        context, "Citation Style:", "APA 6th Edition"),
                     Divider(color: dividerColor),
-                    orderSummaryCardSubjectAndTopicsRow(context, "Citation Style:", "APA 6th Edition"),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, "Min. price:", "\$123.16"),
                     Divider(color: dividerColor),
-                    orderSummaryCardSubjectAndTopicsRow(context, "Min. price:", "\$123.16"),
-                    Divider(color: dividerColor),
-                    orderSummaryCardSubjectAndTopicsRow(context, "Language:", "English (US)"),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, "Language:", "English (US)"),
                     Divider(color: dividerColor),
                   ],
                 ),
@@ -317,15 +342,20 @@ Widget orderSummaryCard(BuildContext context) {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    orderSummaryCardSubjectAndTopicsRow(context, " Service:", "Writing"),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, " Service:", "Writing"),
                     Divider(color: dividerColor),
-                    orderSummaryCardSubjectAndTopicsRow(context, "Education Level:", "Master's"),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, "Education Level:", "Master's"),
                     Divider(color: dividerColor),
-                    orderSummaryCardSubjectAndTopicsRow(context, "Subject:", "Urban and Environmental Planning"),
+                    orderSummaryCardSubjectAndTopicsRow(context, "Subject:",
+                        "Urban and Environmental Planning"),
                     Divider(color: dividerColor),
-                    orderSummaryCardSubjectAndTopicsRow(context, "Your Deadline:", "May 25, 12:40 AM"),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, "Your Deadline:", "May 25, 12:40 AM"),
                     Divider(color: dividerColor),
-                    orderSummaryCardSubjectAndTopicsRow(context, "Writer's Deadline", "May 24, 12:40 AM"),
+                    orderSummaryCardSubjectAndTopicsRow(
+                        context, "Writer's Deadline", "May 24, 12:40 AM"),
                     Divider(color: dividerColor),
                   ],
                 ),
