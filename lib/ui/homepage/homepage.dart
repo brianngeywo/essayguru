@@ -1,23 +1,15 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/sections/desktop_sidebar.dart';
 import 'package:essayguru/sections/sidebars.dart';
 import 'package:essayguru/ui/homepage/sections/available_orders_section.dart';
-import 'package:essayguru/ui/my_bids/main.dart';
 import 'package:essayguru/ui/my_bids/sections/my_bids_section.dart';
-import 'package:essayguru/ui/my_orders/main.dart';
 import 'package:essayguru/ui/my_orders/sections/my_orders.dart';
-import 'package:essayguru/ui/notifications/main.dart';
 import 'package:essayguru/ui/notifications/notifications_page.dart';
-import 'package:essayguru/ui/order_details/main.dart';
 import 'package:essayguru/ui/order_details/order_details_page.dart';
-import 'package:essayguru/ui/payments/main.dart';
 import 'package:essayguru/ui/payments/payments_page.dart';
-import 'package:essayguru/ui/rules_and_tips/main.dart';
 import 'package:essayguru/ui/rules_and_tips/rules_and_tips_page.dart';
-import 'package:essayguru/widgets/desktop_side_bar_button.dart';
+import 'package:essayguru_ui_components/int_controller.dart';
 import 'package:flutter/material.dart';
-
-import '../../int_controller.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = "/homepage";

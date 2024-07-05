@@ -1,7 +1,6 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/ui/order_details/sections/sections.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class OrderDetailsPage extends StatelessWidget {

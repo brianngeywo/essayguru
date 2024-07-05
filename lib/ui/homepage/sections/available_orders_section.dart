@@ -1,6 +1,6 @@
 import 'package:essayguru/widgets/main.dart';
 import 'package:flutter/material.dart';
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 
 class AvailableOrderPage extends StatefulWidget {
   const AvailableOrderPage({Key? key}) : super(key: key);

@@ -1,7 +1,8 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:flutter/material.dart';
 
-ExpansionPanel singleRulesAndTipsExpansionPanel(BuildContext context, bool isOpen) {
+ExpansionPanel singleRulesAndTipsExpansionPanel(
+    BuildContext context, bool isOpen) {
   return ExpansionPanel(
     backgroundColor: mySecondaryColor,
     headerBuilder: (context, isOpenr) {

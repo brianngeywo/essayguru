@@ -1,4 +1,4 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/ui/payments/sections/sections.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -10,7 +10,8 @@ class PaymentsPage extends StatefulWidget {
   State<PaymentsPage> createState() => _PaymentsPageState();
 }
 
-class _PaymentsPageState extends State<PaymentsPage> with SingleTickerProviderStateMixin {
+class _PaymentsPageState extends State<PaymentsPage>
+    with SingleTickerProviderStateMixin {
   List<Tab> paymentsTabs = [
     Tab(
       child: Text(
@@ -41,14 +42,13 @@ class _PaymentsPageState extends State<PaymentsPage> with SingleTickerProviderSt
     ),
   ];
   late TabController _paymentsTabController;
-  int _selectedTab = 0;
   @override
   void initState() {
     super.initState();
-    _paymentsTabController = TabController(length: paymentsTabs.length, vsync: this);
+    _paymentsTabController =
+        TabController(length: paymentsTabs.length, vsync: this);
     _paymentsTabController.addListener(() {
       setState(() {
-        _selectedTab = _paymentsTabController.index;
       });
     });
   }
@@ -104,9 +104,9 @@ class _PaymentsPageState extends State<PaymentsPage> with SingleTickerProviderSt
         body: TabBarView(
           controller: _paymentsTabController,
           children: [
-            AccountTransactionsList(),
+            const AccountTransactionsList(),
             withdrawalRequestList(),
-            AccountTransactionsList(),
+            const AccountTransactionsList(),
           ],
         ),
       ),

@@ -1,5 +1,5 @@
-import 'package:essayguru/constants/const.dart';
 import 'package:essayguru/ui/order_details/main.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -182,10 +182,10 @@ Widget chatTileCard() {
             ),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
             Flexible(
               child: Padding(
                 padding: EdgeInsets.all(4.0),

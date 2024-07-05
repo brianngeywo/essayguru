@@ -1,26 +1,38 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/ui/rules_and_tips/sections/sections.dart';
 import 'package:flutter/material.dart';
 
 class RulesAndTipsPage extends StatefulWidget {
-  RulesAndTipsPage({Key? key}) : super(key: key);
+  const RulesAndTipsPage({Key? key}) : super(key: key);
 
   @override
   State<RulesAndTipsPage> createState() => _RulesAndTipsPageState();
 }
 
-class _RulesAndTipsPageState extends State<RulesAndTipsPage> with SingleTickerProviderStateMixin {
+class _RulesAndTipsPageState extends State<RulesAndTipsPage>
+    with SingleTickerProviderStateMixin {
   List<bool> isExpanded = [];
   late TabController _controller;
   int _selectedindex = 0;
   List<Tab> tabs = [
-    Tab(text: "terms and Conditions"),
-    Tab(text: "Writing Guide"),
+    const Tab(text: "terms and Conditions"),
+    const Tab(text: "Writing Guide"),
   ];
   @override
   void initState() {
     super.initState();
-    isExpanded = [false, false, false, false, false, false, false, false, false, false];
+    isExpanded = [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ];
     _controller = TabController(length: tabs.length, vsync: this);
     _controller.addListener(() {
       setState(() {
@@ -64,7 +76,7 @@ class _RulesAndTipsPageState extends State<RulesAndTipsPage> with SingleTickerPr
               child: ListView(
                 children: [
                   ExpansionPanelList(
-                    animationDuration: Duration(milliseconds: 1000),
+                    animationDuration: const Duration(milliseconds: 1000),
                     children: isExpanded.map((e) {
                       return singleRulesAndTipsExpansionPanel(context, e);
                     }).toList(),
@@ -75,7 +87,7 @@ class _RulesAndTipsPageState extends State<RulesAndTipsPage> with SingleTickerPr
                 ],
               ),
             ),
-            Text("fuck it am tired"),
+            const Text("fuck it am tired"),
           ],
         ),
       ),

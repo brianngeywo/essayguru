@@ -1,19 +1,11 @@
-import 'package:essayguru/constants/const.dart';
-import 'package:essayguru/ui/homepage/homepage.dart';
-import 'package:essayguru/ui/my_bids/main.dart';
-import 'package:essayguru/ui/notifications/main.dart';
-import 'package:essayguru/ui/payments/main.dart';
-import 'package:essayguru/ui/rules_and_tips/main.dart';
-import 'package:essayguru/widgets/desktop_side_bar_button.dart';
-import 'package:essayguru/widgets/main.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
+import 'package:essayguru_ui_components/desktop_side_bar_button.dart';
+import 'package:essayguru_ui_components/int_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../int_controller.dart';
-
 class DesktopSidebar extends StatelessWidget {
-  DesktopSidebar({Key? key, required this.intController})
-      : super(key: key);
+  const DesktopSidebar({Key? key, required this.intController}) : super(key: key);
   final IntController intController;
   @override
   Widget build(BuildContext context) {
@@ -21,52 +13,11 @@ class DesktopSidebar extends StatelessWidget {
       color: mySecondaryColor,
       width: 430,
       child: ListView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         children: [
-          Container(
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            color: myPrimaryColor,
-            child: Text(
-              "EssayGURU",
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                color: textColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-              ),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            color: myPrimaryColor,
-            child: ListTile(
-              leading: Text(
-                "Account status",
-                style: TextStyle(
-                  color: textColor,
-                  fontWeight: FontWeight.w200,
-                  fontSize: 12,
-                ),
-              ),
-              trailing: Container(
-                margin: EdgeInsets.all(5.0),
-                child: MaterialButton(
-                    onPressed: () {},
-                    color: Colors.green,
-                    child: Text(
-                      "Active",
-                      style: TextStyle(
-                        color: textColor,
-                        fontWeight: FontWeight.w200,
-                        fontSize: 12,
-                      ),
-                    )),
-              ),
-            ),
-          ),
-         DesktopSideBarButton(
+          const DesktopSidebarLogo(),
+          const DesktopSideBarAccountStatus(),
+          DesktopSideBarButton(
             text: "JEFF S.",
             awesomeIcons: FontAwesomeIcons.userAlt,
             indicatorText: "",
@@ -80,7 +31,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "\$792.05",
             isNotification: false,
             page: 6, // MainPaymentsPage
-             intController: intController,
+            intController: intController,
           ),
           DesktopSideBarButton(
             text: "notifications",
@@ -88,7 +39,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "",
             isNotification: true,
             page: 4, // MainNotificationsPage
-             intController: intController,
+            intController: intController,
           ),
           Divider(color: textColor.withOpacity(0.3)),
           DesktopSideBarButton(
@@ -97,7 +48,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "",
             isNotification: false,
             page: 0, // AvailableOrderPage
-             intController: intController,
+            intController: intController,
           ),
           DesktopSideBarButton(
             text: "my bids",
@@ -105,7 +56,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "",
             isNotification: true,
             page: 2, // MainBidsPage
-             intController: intController,
+            intController: intController,
           ),
           DesktopSideBarButton(
             text: "my orders",
@@ -113,7 +64,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "",
             isNotification: false,
             page: 1, // MainOrdersPage
-             intController: intController,
+            intController: intController,
           ),
           Divider(color: textColor.withOpacity(0.3)),
           DesktopSideBarButton(
@@ -122,7 +73,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "",
             isNotification: false,
             page: 0, // AvailableOrderPage (assuming no dedicated chat page)
-             intController: intController,
+            intController: intController,
           ),
           DesktopSideBarButton(
             text: "help center",
@@ -130,7 +81,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "",
             isNotification: false,
             page: 5, // MainRulesAndTipsPage
-             intController: intController,
+            intController: intController,
           ),
           DesktopSideBarButton(
             text: "rules & tips",
@@ -138,7 +89,7 @@ class DesktopSidebar extends StatelessWidget {
             indicatorText: "",
             isNotification: false,
             page: 5, // MainRulesAndTipsPage
-             intController: intController,
+            intController: intController,
           ),
           Divider(color: textColor.withOpacity(0.3)),
         ],

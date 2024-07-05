@@ -1,4 +1,4 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/ui/homepage/homepage.dart';
 import 'package:essayguru/ui/my_bids/main.dart';
 import 'package:essayguru/ui/my_orders/main.dart';
@@ -33,7 +33,7 @@ Widget sidebar(BuildContext context) {
           if (ResponsiveWrapper.of(context).isDesktop)
             Container(
               padding: const EdgeInsets.all(10),
-              margin: EdgeInsets.only(top: 12),
+              margin: const EdgeInsets.only(top: 12),
               width: double.infinity,
               color: myPrimaryColor,
               child: Text(

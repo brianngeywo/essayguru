@@ -1,5 +1,4 @@
-import 'package:essayguru/constants/const.dart';
-import 'package:essayguru/ui/homepage/sections/available_orders_section.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/sections/sidebars.dart';
 import 'package:essayguru/ui/notifications/notifications_page.dart';
 import 'package:flutter/material.dart';

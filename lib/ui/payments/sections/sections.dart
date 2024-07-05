@@ -1,4 +1,4 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/ui/payments/sections/reusables.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +6,8 @@ class AccountTransactionsList extends StatefulWidget {
   const AccountTransactionsList({Key? key}) : super(key: key);
 
   @override
-  _AccountTransactionsListState createState() => _AccountTransactionsListState();
+  _AccountTransactionsListState createState() =>
+      _AccountTransactionsListState();
 }
 
 class _AccountTransactionsListState extends State<AccountTransactionsList> {
@@ -14,7 +15,20 @@ class _AccountTransactionsListState extends State<AccountTransactionsList> {
   @override
   void initState() {
     super.initState();
-    isOpen = [true, false, false, false, false, false, false, false, false, false, false, false];
+    isOpen = [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ];
   }
 
   @override
@@ -79,7 +93,10 @@ class _AccountTransactionsListState extends State<AccountTransactionsList> {
           // ),
           Expanded(
             child: ExpansionPanelList(
-              children: isOpen.map((isPanelOpen) => accountTransactionsExpansionPanel(isPanelOpen)).toList(),
+              children: isOpen
+                  .map((isPanelOpen) =>
+                      accountTransactionsExpansionPanel(isPanelOpen))
+                  .toList(),
               expansionCallback: (i, expanded) {
                 setState(() {
                   isOpen[i] = !isOpen[i];

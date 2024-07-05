@@ -1,7 +1,6 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru/ui/order_details/sections/reusables.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 Widget bidOrderSection() {
@@ -33,7 +32,7 @@ Widget bidOrderSection() {
               // ),
             ],
           ),
-          SizedBox(height: 9),
+          const SizedBox(height: 9),
           Text(
             "My share \$24.00 (50%)",
             style: TextStyle(
@@ -42,7 +41,7 @@ Widget bidOrderSection() {
               fontSize: 12,
             ),
           ),
-          SizedBox(height: 6),
+          const SizedBox(height: 6),
           Text(
             "25 open bids",
             style: TextStyle(

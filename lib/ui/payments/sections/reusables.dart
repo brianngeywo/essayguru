@@ -1,4 +1,4 @@
-import 'package:essayguru/constants/const.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:flutter/material.dart';
 
 ExpansionPanel accountTransactionsExpansionPanel(bool isExpanded) {
