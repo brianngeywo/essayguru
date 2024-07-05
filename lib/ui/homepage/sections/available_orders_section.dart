@@ -1,6 +1,7 @@
-import 'package:essayguru/widgets/main.dart';
+import 'package:essayguru/ui/order_details/main.dart';
+import 'package:essayguru_ui_components/main_section_listings_layout_extension.dart';
+import 'package:essayguru_ui_components/order_list_tile_card.dart';
 import 'package:flutter/material.dart';
-import 'package:essayguru_ui_components/constants/const.dart';
 
 class AvailableOrderPage extends StatefulWidget {
   const AvailableOrderPage({Key? key}) : super(key: key);
@@ -13,53 +14,19 @@ class _AvailableOrderPageState extends State<AvailableOrderPage>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: myPrimaryColor,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: myPrimaryColor,
-        elevation: 0,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20, bottom: 15),
-          child: Text(
-            "Available Orders",
-            style: TextStyle(
-              color: textColor,
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+    return MainSectionListingsLayoutExtension.defaultLayout(
+      context,
+      title: "Available Orders",
+      items: [
+        OrderListTileCard(
+          onPressed: () => Navigator.restorablePushNamed(
+              context, MainOrderDetailsPage.routeName),
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: Scaffold(
-          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-          floatingActionButton: FloatingActionButton.extended(
-            onPressed: () {},
-            backgroundColor: Colors.green.shade900,
-            label: Text(
-              "Get help",
-              style: TextStyle(
-                color: textColor,
-                fontSize: 11,
-              ),
-            ),
-          ),
-          backgroundColor: myPrimaryColor,
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            backgroundColor: myPrimaryColor,
-            elevation: 0,
-          ),
-          body: ListView(
-            children: [
-              orderTileCard(context),
-              orderTileCard(context),
-            ],
-          ),
+        OrderListTileCard(
+          onPressed: () => Navigator.restorablePushNamed(
+              context, MainOrderDetailsPage.routeName),
         ),
-      ),
+      ],
     );
   }
 }

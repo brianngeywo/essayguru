@@ -1,10 +1,10 @@
 import 'package:essayguru/ui/homepage/homepage.dart';
 import 'package:essayguru/ui/my_bids/main.dart';
 import 'package:essayguru/ui/my_orders/main.dart';
-import 'package:essayguru/ui/notifications/main.dart';
 import 'package:essayguru/ui/order_details/main.dart';
-import 'package:essayguru/ui/payments/main.dart';
-import 'package:essayguru/ui/rules_and_tips/main.dart';
+import 'package:essayguru_ui_components/notifications/main.dart';
+import 'package:essayguru_ui_components/payments/main.dart';
+import 'package:essayguru_ui_components/rules_and_tips/main.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
