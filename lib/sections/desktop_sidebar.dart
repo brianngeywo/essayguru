@@ -1,14 +1,11 @@
 import 'package:essayguru_ui_components/constants/const.dart';
 import 'package:essayguru_ui_components/desktop_side_bar_button.dart';
 import 'package:essayguru_ui_components/desktop_sidebar_default_layout.dart';
-import 'package:essayguru_ui_components/int_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DesktopSidebar extends StatelessWidget {
-  const DesktopSidebar({Key? key, required this.intController})
-      : super(key: key);
-  final IntController intController;
+
   @override
   Widget build(BuildContext context) {
     return DesktopSidebarDefaultLayout.defaultLayout(
@@ -25,7 +22,7 @@ class DesktopSidebar extends StatelessWidget {
           awesomeIcons: FontAwesomeIcons.moneyBillWaveAlt,
           indicatorText: "\$792.05",
           isNotification: false,
-          onPressed: () => intController.updateValue(6),
+          onPressed: () => intController.updateValue(5),
         ),
         DesktopSideBarButton(
           text: "notifications",
@@ -69,14 +66,14 @@ class DesktopSidebar extends StatelessWidget {
           awesomeIcons: FontAwesomeIcons.comments,
           indicatorText: "",
           isNotification: false,
-          onPressed: () => intController.updateValue(5),
+          onPressed: () => intController.updateValue(4),
         ),
         DesktopSideBarButton(
           text: "rules & tips",
           awesomeIcons: FontAwesomeIcons.infoCircle,
           indicatorText: "",
           isNotification: false,
-          onPressed: () => intController.updateValue(5),
+          onPressed: () => intController.updateValue(4),
         ),
       ],
     );

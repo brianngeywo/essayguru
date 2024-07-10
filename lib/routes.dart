@@ -15,12 +15,7 @@ class Routes {
         switch (settings.name) {
           case HomePage.routeName:
             return const HomePage();
-          case MainOrdersPage.routeName:
-            return const MainOrdersPage();
-          case MainBidsPage.routeName:
-            return const MainBidsPage();
-          case MainOrderDetailsPage.routeName:
-            return const MainOrderDetailsPage();
+
           case MainNotificationsPage.routeName:
             return const MainNotificationsPage();
           case MainRulesAndTipsPage.routeName:

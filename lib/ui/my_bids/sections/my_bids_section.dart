@@ -1,11 +1,11 @@
 import 'package:essayguru/ui/order_details/main.dart';
+import 'package:essayguru_ui_components/constants/const.dart';
+import 'package:essayguru_ui_components/int_controller.dart';
 import 'package:essayguru_ui_components/main_section_listings_layout_extension.dart';
 import 'package:essayguru_ui_components/order_list_tile_card.dart';
 import 'package:flutter/material.dart';
 
 class MyBidsSection extends StatefulWidget {
-  const MyBidsSection({Key? key}) : super(key: key);
-
   @override
   State<MyBidsSection> createState() => _MyBidsSectionState();
 }
@@ -19,8 +19,7 @@ class _MyBidsSectionState extends State<MyBidsSection>
       title: "My Bids",
       items: [
         OrderListTileCard(
-          onPressed: () => Navigator.restorablePushNamed(
-              context, MainOrderDetailsPage.routeName),
+          onPressed: () => intController.updateValue(6),
         ),
       ],
     );
